@@ -17,3 +17,9 @@ test("it should show YMWDHMS", function(){
     strictEqual(digit, "00");
   });
 });
+
+test("it should have a default end date", function(){
+  var expected = new Date('Mar 25, 2086');
+  var actual = this.subject().get('endDate');
+  deepEqual(actual, expected);
+});
