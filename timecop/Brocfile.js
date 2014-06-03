@@ -1,5 +1,7 @@
 /* global require, module */
 
+var pickFiles = require('broccoli-static-compiler');
+var mergeTrees = require('broccoli-merge-trees');
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
@@ -26,4 +28,10 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
 });
 
 
-module.exports = app.toTree();
+var timecop = pickFiles('vendor/timecop', {
+    srcDir: '/',
+    files: ['timecop.js'],
+    destDir: '/assets'
+});
+
+module.exports = mergeTrees([app.toTree(), timecop]);

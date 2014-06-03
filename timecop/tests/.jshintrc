@@ -41,7 +41,8 @@
     "andThen",
     "currentUrl",
     "currentPath",
-    "currentRouteName"
+    "currentRouteName",
+    "Timecop"
   ],
   "node" : false,
   "browser" : false,
